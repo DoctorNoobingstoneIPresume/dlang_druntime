@@ -168,7 +168,7 @@ pragma(inline, true)
 uint addu()(uint x, uint y, ref bool overflow)
 {
     immutable uint r = x + y;
-    if (r < x || r < y)
+    if (r < x) // Equivalent to "if (r < y)".
         overflow = true;
     return r;
 }
@@ -203,7 +203,7 @@ pragma(inline, true)
 ulong addu()(ulong x, ulong y, ref bool overflow)
 {
     immutable ulong r = x + y;
-    if (r < x || r < y)
+    if (r < x) // Equivalent to "if (r < y)".
         overflow = true;
     return r;
 }
@@ -240,7 +240,7 @@ pragma(inline, true)
 ucent addu()(ucent x, ucent y, ref bool overflow)
 {
     immutable ucent r = x + y;
-    if (r < x || r < y)
+    if (r < x) // Equivalent to "if (r < y)".
         overflow = true;
     return r;
 }
